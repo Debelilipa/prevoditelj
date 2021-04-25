@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <form method="post"> 
+            <input type="text" name="text1" placeholder="lat u cir">
+            <br>
+            <input type="text" name="text2" placeholder="cir u lat">  
+            <br>
+            <button type="submit" name="submit" value="submit">prevedi</button>    
+        </form>
+   
+        <?php      
+       $text1 = filter_input (INPUT_POST, "text1");
+       $text2 = filter_input (INPUT_POST, "text2");     
+       $prijevod1 = str_replace($text1, $latucir, $prijevod1);
+       $prijevod2 = str_replace($text2, $cirulat, $prijevod2);
+       $latucir = array ("a" => "a",
+                         "b" => "б",
+                         "c" => "ц",
+                         "d" => "д",
+                         "dz"=> "џ",
+                         "e" => "e",
+                         "f" => "ф",
+                         "g" => "г",
+                         "h" => "х",
+                         "i" => "и",
+                         "j" => "ј",
+                         "k" => "к",
+                         "l" => "л",
+                         "lj"=> "љ",
+                         "m" => "m",
+                         "n" => "н",
+                         "nj"=> "њ",
+                         "o" => "o",
+                         "p" => "п",
+                         "r" => "o",
+                         "s" => "c",
+                         "t" => "у",
+                         "u" => "y",
+                         "v" => "в",
+                         "z" => "з" );
+       
+       $cirulat = array ("a" => "a",
+                         "б" => "b",
+                         "ц" => "v",
+                         "д" => "d",
+                         "џ" => "dz",
+                         "e" => "e",
+                         "ф" => "f",
+                         'g' => "g",
+                         "г" => "h",
+                         'i' => "i",
+                         "и" => "ј",
+                         "к" => "к",
+                         "л" => "l",
+                         "љ" => "lj",
+                         "m" => "m",
+                         "н" => "n",
+                         "њ" => "nj",
+                         "o" => "o",
+                         "п" => "p",
+                         "o" => "r",
+                         "c" => "s",
+                         "у" => "t",
+                         "y" => "u",
+                         "в" => "v",
+                         "з" => "z" );
+        
+        if ($text1 !== "text1"){
+        echo "niste upisali text";
+        }
+        else {
+        echo (filter_input (INPUT_POST, "$prijevod1"));       
+        }
+        if ($text2 !== "text2"){
+        echo "niste upisali text";
+        }
+        else {
+        echo (filter_input (INPUT_POST, "$prijevod2"));       
+        }
+        
+           
+            
+        //$textlat = str_replace($lat, $cir, $textlat);
+            //echo $textlat;
+            //$textcir = str_replace($cir, $lat, $textcir);
+            //echo $textcir
+        
+        ?>
+    </body>
+</html>
+            ;
